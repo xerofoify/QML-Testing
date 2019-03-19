@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>core/Button.qml</file>
+        <file>core/FileMenu.qml</file>
+        <file>core/EditMenu.qml</file>
+        <file>core/FileDialog.qml</file>
+        <file>core/MenuBar.qml</file>
+        <file>core/TextArea.qml</file>
+        <file>TextEditior.qml</file>
+    </qresource>
+</RCC>
