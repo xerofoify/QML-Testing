@@ -49,7 +49,7 @@ Rectangle {
     //generous amount of screen space that will allow the buttons to fit
     height: 480; width:1000
 
-    color: "#6C646A"
+    color: "powderblue"
 
     //a sub-rectangle allows the flexibility of setting the row area
     Rectangle{

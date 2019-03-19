@@ -44,7 +44,7 @@ Rectangle {
     id: menuBar
     width: 1000; height:300
     color:"transparent"
-    property color fileColor: "plum"
+    property color fileColor: "powderblue"
     property color editColor: "powderblue"
 
     property real partition: 1/10

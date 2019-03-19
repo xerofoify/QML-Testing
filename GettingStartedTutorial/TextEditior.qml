@@ -50,7 +50,7 @@ Rectangle {
     //Item 1: MenuBar on the top portion of the screen
     MenuBar{
         id:menuBar
-        height: screen.partition; width: screen.width
+        height: screen.partition; color: "#2e3436"; width: screen.width
         z:1
     }
     //Item 2: The editable text area
