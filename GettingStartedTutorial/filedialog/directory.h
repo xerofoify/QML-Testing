@@ -58,7 +58,7 @@ class Directory : public QObject{
     Q_PROPERTY(int filesCount READ filesCount)
 
     //list property containing file names as QString
-    Q_PROPERTY(QDeclarativeListProperty<File> files READ files CONSTANT )
+    Q_PROPERTY(QQmlListProperty<File> files READ files CONSTANT )
 
     //file name of the text file to read/write
     Q_PROPERTY(QString filename READ filename WRITE setFilename NOTIFY filenameChanged)
@@ -68,7 +68,7 @@ class Directory : public QObject{
 
     public:
         Directory(QObject *parent = 0);
-
+        Directory(QString path, QObject *parent = 0);
         //properties' read functions
         int filesCount() const;
         QString filename() const;

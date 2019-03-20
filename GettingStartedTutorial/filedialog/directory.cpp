@@ -61,6 +61,26 @@ Directory::Directory(QObject *parent) : QObject(parent)
 
     refresh();
 }
+/*
+Directory constructor with path setting
+Initialize the saves directory and creates the file list
+*/
+Directory::Directory(QString path, QObject *parent) : QObject(parent)
+{
+
+
+    m_dir.cd(path);
+
+    //go to the saved directory. if not found, create save directory
+    m_saveDir = "saves";
+    if (m_dir.cd(m_saveDir) == 0){
+        m_dir.mkdir(m_saveDir);
+        m_dir.cd(m_saveDir);
+    }
+     m_filterList << "*.txt";
+
+    refresh();
+}
 
 /*
 Directory::filesNumber
@@ -68,6 +88,26 @@ Return the number of Files
 */
 int Directory::    filesCount() const{
     return m_fileList.size();
+}
+
+/*
+Function called to append data into current file and in turn add to current directory
+*/
+void appendFiles(QString name,QString contents){
+  Directory current;
+  current.setFilename(name);
+  current.setFileContent(contents);
+  current.saveFile();
+}
+
+/*
+Function called to append data into current file and in turn add to passed path for the directory
+*/
+void appendFiles(QString path, QString name,QString contents){
+  Directory current(path);
+  current.setFilename(name);
+  current.setFileContent(contents);
+  current.saveFile();
 }
 
 /*
